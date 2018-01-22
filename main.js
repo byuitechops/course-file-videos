@@ -42,11 +42,17 @@ var videoExtensions = [
 ];
 
 module.exports = (course, stepCallback) => {
-    course.addModuleReport('course-file-videos');
 
     /* Get the videos from course files */
     var videos = course.content.filter(file => {
         return videoExtensions.includes(file.ext);
+    });
+
+    videos.forEach(video => {
+        course.log('Videos in Course Files', {
+            'Name': video.name,
+            'Exported Path': video.path
+        });
     });
 
     /* Map list of videos to just the video names */
@@ -54,10 +60,8 @@ module.exports = (course, stepCallback) => {
         return video.name;
     });
 
-    course.success('course-file-videos', `${videos.length} videos found in course files. Their titles are: \n${videos.join('\n')}`);
     /* Store videos in a new info property */
     course.newInfo('course-file-videos', videos);
-    course.success('course-file-videos', `${videos.length} videos stored for evaluation.`);
 
     stepCallback(null, course);
 };
