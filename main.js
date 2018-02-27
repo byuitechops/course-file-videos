@@ -1,7 +1,5 @@
-/*eslint-env node, es6*/
-
 /* Module Description */
-// Locates videos in the course files and flags them for later review
+/* Locates videos in the course files and flags them for later review
 
 /* Put dependencies here */
 var videoExtensions = [
@@ -16,28 +14,28 @@ var videoExtensions = [
     '.m2v',
     '.m4p',
     '.m4v',
-	'.mkv',
-	'.mng',
-	'.mov',
-	'.mp2',
-	'.mp4',
-	'.mpe',
-	'.mpeg',
-	'.mpg',
-	'.mpv',
-	'.mxf',
-	'.nsv',
-	'.ogg',
-	'.ogv',
-	'.qt',
-	'.rm',
-	'.rmvb',
-	'.roq',
-	'.svi',
-	'.vob',
-	'.webm',
-	'.wmv',
-	'.yuv',
+    '.mkv',
+    '.mng',
+    '.mov',
+    '.mp2',
+    '.mp4',
+    '.mpe',
+    '.mpeg',
+    '.mpg',
+    '.mpv',
+    '.mxf',
+    '.nsv',
+    '.ogg',
+    '.ogv',
+    '.qt',
+    '.rm',
+    '.rmvb',
+    '.roq',
+    '.svi',
+    '.vob',
+    '.webm',
+    '.wmv',
+    '.yuv',
     '.swf'
 ];
 
@@ -56,7 +54,7 @@ module.exports = (course, stepCallback) => {
     });
 
     /* Map list of videos to just the video names */
-    var videos = videos.map(video => {
+    videos = videos.map(video => {
         return video.name;
     });
 
