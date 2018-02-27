@@ -36,4 +36,4 @@ Categories used in logging data in the module:
 - Videos in Course Files
 
 ## Requirements
-Unknown
+Video files probably shouldn't be saved inside the course (they should probably be in Kaltura). This gives us a list of which videos we'll need to move over.
